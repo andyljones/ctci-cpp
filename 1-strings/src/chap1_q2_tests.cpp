@@ -1,6 +1,6 @@
 #include <cstring>
 #include "gtest/gtest.h"
-#include "chap1_q2.h"
+#include "chap1_q2.hpp"
 
 TEST(C1Q2Test, ReversesOddLengthString)
 {

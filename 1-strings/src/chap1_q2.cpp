@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include "chap1_q2.hpp"
 
 namespace chap1_q2 
 {

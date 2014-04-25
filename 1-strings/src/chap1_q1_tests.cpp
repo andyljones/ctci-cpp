@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "gtest/gtest.h"
-#include "chap1_q1.h"
+#include "chap1_q1.hpp"
 
 TEST(C1Q1Test, HandlesAllUniqueCharacters)
 {

@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <climits>
 #include <bitset>
-#include "chap1_q1.h"
+#include "chap1_q1.hpp"
 
 namespace chap1_q1
 {
