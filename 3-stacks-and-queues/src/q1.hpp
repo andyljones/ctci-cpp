@@ -1,3 +1,4 @@
+#include <boost/optional/optional.hpp>
 #include <iostream>
 #include <vector>
 
@@ -9,9 +10,12 @@ namespace chap3
 		public:
 			multi_stack(int count);
 			bool push(int i, const T& x);
+			boost::optional<T> pop(int i);
 			std::vector<T> getContents();
 		
 		private:
+			void resize();
+
 			std::vector<T> contents;
 			std::vector<int> tops; 
 			int largestTop;
@@ -31,14 +35,13 @@ namespace chap3
 		}
 		else
 		{
+			resize();	
+
 			int top = tops.at(i);
-			largestTop = *std::max_element(tops.begin(), tops.end());
-			contents.resize(count * (largestTop + 1));
-			
 			contents.at(count*top+i) = x;
 
 			tops.at(i)++;
-			
+
 			return true;
 		}
 	}
@@ -48,4 +51,31 @@ namespace chap3
 	{
 		return contents;
 	}
+
+	template<typename T>
+	boost::optional<T> multi_stack<T>::pop(int i)
+	{
+		if (i >= count || tops.at(i) == 0)
+		{
+			return boost::optional<T>();
+		}
+		else
+		{
+			resize();
+			
+			int top = tops.at(i);
+			auto result = contents.at((count*(top - 1)) + i);
+			
+			tops.at(i)--;
+
+			return boost::optional<T>(result);
+		}
+	}
+
+	template<typename T>
+	void multi_stack<T>::resize()
+	{
+		largestTop = *std::max_element(tops.begin(), tops.end());
+		contents.resize(count * (largestTop + 1));
+	}		
 }
