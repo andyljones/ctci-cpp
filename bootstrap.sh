@@ -10,6 +10,7 @@ apt-get install -y clang-3.4
 
 # Get C++ development tools
 apt-get install -y cmake
+apt-get install -y libboost-all-dev
 
 # Get an editor
 apt-get install -y vim
