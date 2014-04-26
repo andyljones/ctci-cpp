@@ -1,6 +1,6 @@
 #include <initializer_list>
-#include <string>
 #include <sstream>
+#include <string>
 
 #include "gtest/gtest.h"
 #include "list.hpp"
@@ -25,15 +25,14 @@ TEST(ListTest, InitializerListConstructorHandlesEmptyArgList)
 	EXPECT_FALSE(sut.head);
 }
 
-TEST(ListTest, OutputOperatorWorks)
+TEST(ListTest, OutputOperator)
 {
 	chap2::List<int> sut({1, 2, 3});
 
-	const std::string expectedResult = "1 2 3 ";
-	
-	std::stringstream stream;
-	stream << sut;
-	std::string actualResult = stream.str();
+	std::stringstream output;  
+	output << sut;
+	std::string actualResult = output.str();
 
+	const std::string expectedResult = "1 2 3 ";
 	EXPECT_EQ(expectedResult, actualResult);
 }

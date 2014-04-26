@@ -1,4 +1,5 @@
-#include <iostream>
+#include <sstream>
+#include <string>
 #include <initializer_list>
 #include <memory>
 
@@ -33,7 +34,7 @@ namespace chap2
 	}
 	
 	template<typename T>
-	std::ostream& operator<<(std::ostream& os, List<T> list)
+	std::ostream& operator<<(std::ostream& os, const List<T>& list)
 	{
 		auto current = list.head;
 		while (current)
