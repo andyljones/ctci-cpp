@@ -1,7 +1,6 @@
 #ifndef CHAP_4_GRAPH_NODE_HPP
 #define CHAP_4_GRAPH_NODE_HPP
 
-#include <memory>
 #include <vector>
 
 namespace chap_4 
@@ -10,10 +9,7 @@ namespace chap_4
 	struct graph_node 
 	{
 		T value;
-
-		using neighbour_vec = 
-			std::vector<std::shared_ptr<graph_node<T>>>;
-		neighbour_vec neighbours;
+		std::vector<graph_node<T>*> neighbours;
 	};
 }
 
