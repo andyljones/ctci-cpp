@@ -22,11 +22,11 @@ TEST(C5Q2Test, PrintsBinaryRepOf1)
 	EXPECT_EQ(expected, actual);
 }
 	
-TEST(C5Q2Test, PrintsBinaryRepOfOneHalf)
+TEST(C5Q2Test, PrintsBinaryRepOfThreeQuarters)
 {
-	double d = 0.5;
+	double d = 0.75;
 	
-	std::string expected = "10000000000000000000000000000000";
+	std::string expected = "11000000000000000000000000000000";
 	std::string actual = chap_5::binary_representation(d);
 
 	EXPECT_EQ(expected, actual);
