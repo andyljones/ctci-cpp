@@ -1,6 +1,7 @@
 #ifndef CHAP_4_GRAPH_HPP
 #define CHAP_4_GRAPH_HPP
 
+#include <iostream>
 #include <vector>
 #include <initializer_list>
 #include <unordered_map>
@@ -30,7 +31,8 @@ namespace chap_4
 			neighbour_nodes.push_back(&nodes.at(*it));
 		}
 		
-		nodes.emplace(value, graph_node<T>({value, neighbour_nodes})); 
+		graph_node<T> newNode({value, neighbour_nodes});
+		nodes.emplace(value, newNode); 
 	}
 
 	template<typename T>

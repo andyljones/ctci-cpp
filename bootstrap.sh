@@ -6,7 +6,7 @@ echo "deb http://llvm.org/apt/wheezy/ llvm-toolchain-wheezy main" | sudo tee -a 
 echo "deb-src http://llvm.org/apt/wheezy/ llvm-toolchain-wheezy main" | sudo tee -a /etc/apt/sources.list
 apt-get update
 
-apt-get install -y clang-3.4
+apt-get install -y clang-3.5 lldb-3.5
 
 # Get C++ development tools
 apt-get install -y cmake
