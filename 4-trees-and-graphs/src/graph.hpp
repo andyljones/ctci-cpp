@@ -16,6 +16,7 @@ namespace chap_4
 	{
 	public:
 		void add_node(T value, std::initializer_list<T> neighbours);
+		graph_node<T>* get_node(const T& value);
 		std::vector<graph_node<T>*> get_nodes();	
 
 	private:
@@ -45,6 +46,12 @@ namespace chap_4
 		}
 
 		return result;
+	}
+
+	template<typename T>
+	graph_node<T>* graph<T>::get_node(const T& value)
+	{
+		return &nodes.at(value);
 	}
 }
 

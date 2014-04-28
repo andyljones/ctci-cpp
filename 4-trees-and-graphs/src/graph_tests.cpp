@@ -26,3 +26,14 @@ TEST(C4Q2, CanConnectNodes)
 	EXPECT_EQ(0, nodeA->neighbours[0]->value);
 }
 	
+TEST(C4Q2, CanGetSingleNode)
+{
+	chap_4::graph<int> sut;
+
+	sut.add_node(0, {});
+
+	auto actualResult = sut.get_node(0)->value;
+	auto expectedResult = 0;
+
+	EXPECT_EQ(actualResult, expectedResult);
+}
