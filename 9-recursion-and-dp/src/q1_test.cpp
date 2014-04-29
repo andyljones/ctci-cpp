@@ -18,9 +18,9 @@ TEST(C9Q1Test, BaseCasesAreCorrect)
 
 TEST(C9Q1Test, InductionCaseIsCorrect)
 {
-	int expected = 7;
+	int expected = 13;
 
-	int actual = chap_9::no_of_ways(4);
+	int actual = chap_9::no_of_ways(5);
 
 	EXPECT_EQ(expected, actual);
 }
