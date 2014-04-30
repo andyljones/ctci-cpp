@@ -9,4 +9,4 @@ If for some mad reason you want to run this code yourself (such as if you're a f
  - Run `vagrant ssh` to get into the VM
  - Navigate to `/vagrant/1-strings` (for Chapter 1 exercises for example)
  - Make a build directory with `mkdir build`
- - Then `(cd build && cmake -DCMAKE_CXX_COMPILER=/usr/bin/clang++ .. && make && src/tests)` to build and run tests for that chapter
+ - Run `./runtests`

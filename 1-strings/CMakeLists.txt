@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
-project(ctci-strings)
+project(ctci)
+
+set(CMAKE_CXX_FLAGS "-std=c++1y -stdlib=libc++")
 
 ### GTest ###
 add_subdirectory(../gtest-1.7.0 ${CMAKE_CURRENT_BINARY_DIR}/gtest-1.7.0)
