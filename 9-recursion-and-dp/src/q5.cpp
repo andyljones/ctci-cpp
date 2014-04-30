@@ -4,34 +4,34 @@
 namespace chap_9
 {
 
-std::vector<std::string> 
+std::list<std::string> 
 permutations(std::string front, std::string back)
 {
 	if (back.size() == 0)
 	{
-		return std::vector<std::string>({front});
+		return std::list<std::string>({front});
 	}
 	else
 	{
-		std::vector<std::string> result;
+		std::list<std::string> result;
 		for (int i = 0; i < back.size(); i++)
 		{
 			std::string new_back(back);
-			new_back.erase(i, 1);
-
 			std::string new_front(front);
+
+			new_back.erase(i, 1);
 			new_front.push_back(back.at(i));
 			
 			auto new_result = permutations(new_front, new_back);
 
-			result.insert(result.end(), new_result.begin(), new_result.end());
+			result.splice(result.end(), new_result);
 		}
 		
 		return result;
 	}
 }
 
-std::vector<std::string>
+std::list<std::string>
 permutations(std::string input)
 {
 	return permutations("", input);

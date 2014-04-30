@@ -1,3 +1,4 @@
+#include <set>
 #include <string>
 #include <algorithm>
 #include "gtest/gtest.h"
@@ -20,9 +21,8 @@ TEST(C9Q5, GeneratesAllUniquePermutations)
 	const std::string input = "abc";
 	
 	auto result = chap_9::permutations(input);
-
-	auto expected = result.end();
-	auto actual = std::unique(result.begin(), result.end());
-
+	
+	auto expected = result.size();
+	auto actual = std::set<std::string>(result.begin(), result.end()).size();
 	EXPECT_EQ(expected, actual);
 }
