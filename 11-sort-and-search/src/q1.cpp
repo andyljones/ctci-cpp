@@ -1,4 +1,3 @@
-#include <iostream>
 #include "q1.hpp"
 
 namespace chap_11
