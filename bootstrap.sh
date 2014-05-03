@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+set -e
 
 # Install the latest Clang
 wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
